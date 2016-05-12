@@ -1,1 +1,197 @@
 EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:MSP430G2553IPW20R
+LIBS:A120699CT
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MSP430G2553IPW20R U?
+U 1 1 5733FDDC
+P 2950 1750
+F 0 "U?" H 2950 1650 50  0000 C CNN
+F 1 "MSP430G2553IPW20R" H 2950 1850 50  0000 C CNN
+F 2 "MODULE" H 2950 1750 50  0001 C CNN
+F 3 "DOCUMENTATION" H 2950 1750 50  0001 C CNN
+	1    2950 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L A120699CT C?
+U 1 1 5733FE9F
+P 10400 3300
+F 0 "C?" H 10400 3200 50  0000 C CNN
+F 1 "A120699CT" H 10400 3400 50  0000 C CNN
+F 2 "MODULE" H 10400 3300 50  0001 C CNN
+F 3 "DOCUMENTATION" H 10400 3300 50  0001 C CNN
+	1    10400 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR?
+U 1 1 5733FF8C
+P 1550 1150
+F 0 "#PWR?" H 1550 1000 50  0001 C CNN
+F 1 "+3.3V" H 1550 1290 50  0000 C CNN
+F 2 "" H 1550 1150 50  0000 C CNN
+F 3 "" H 1550 1150 50  0000 C CNN
+	1    1550 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5733FFAC
+P 5250 1400
+F 0 "#PWR?" H 5250 1150 50  0001 C CNN
+F 1 "GND" H 5250 1250 50  0000 C CNN
+F 2 "" H 5250 1400 50  0000 C CNN
+F 3 "" H 5250 1400 50  0000 C CNN
+	1    5250 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1550 1150 1550 1300
+Wire Wire Line
+	1550 1300 1700 1300
+$Comp
+L GND #PWR?
+U 1 1 57340122
+P 10400 5750
+F 0 "#PWR?" H 10400 5500 50  0001 C CNN
+F 1 "GND" H 10400 5600 50  0000 C CNN
+F 2 "" H 10400 5750 50  0000 C CNN
+F 3 "" H 10400 5750 50  0000 C CNN
+	1    10400 5750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10400 5650 10400 5750
+Text GLabel 1400 1900 0    60   Input ~ 0
+SPI_CLK
+Text GLabel 1400 2000 0    60   Input ~ 0
+BUSY
+Text GLabel 1400 2100 0    60   Input ~ 0
+PWM
+Text GLabel 1400 2200 0    60   Input ~ 0
+/RESET
+Wire Wire Line
+	1400 1900 1700 1900
+Wire Wire Line
+	1700 2000 1400 2000
+Wire Wire Line
+	1400 2100 1700 2100
+Wire Wire Line
+	1700 2200 1400 2200
+Wire Wire Line
+	4200 2200 4450 2200
+Text GLabel 4450 2200 2    60   Input ~ 0
+PANEL_ON
+Wire Wire Line
+	4200 2100 4450 2100
+Text GLabel 4450 2100 2    60   Input ~ 0
+DISCHARGE
+Wire Wire Line
+	4200 2000 4450 2000
+Text GLabel 4450 2000 2    60   Input ~ 0
+BORDER_CONTROL
+Wire Wire Line
+	4200 1900 4450 1900
+Wire Wire Line
+	4450 1800 4200 1800
+Wire Wire Line
+	4200 1500 4450 1500
+Wire Wire Line
+	4200 1400 4450 1400
+Text GLabel 4450 1900 2    60   Input ~ 0
+SPI_MISO
+Text GLabel 4450 1800 2    60   Input ~ 0
+SPI_MOSI
+Text GLabel 4450 1500 2    60   Input ~ 0
+/FLASH_CS
+Text GLabel 4450 1400 2    60   Input ~ 0
+/EPD_CS
+Wire Wire Line
+	5250 1400 5250 1300
+Wire Wire Line
+	5250 1300 4200 1300
+Wire Wire Line
+	9650 1350 9250 1350
+Text GLabel 9250 1350 0    39   Input ~ 0
+/EPD_CS
+Wire Wire Line
+	9650 1450 9250 1450
+Text GLabel 9250 1450 0    39   Input ~ 0
+BUSY
+$Comp
+L GND #PWR?
+U 1 1 573405DC
+P 9500 1550
+F 0 "#PWR?" H 9500 1300 50  0001 C CNN
+F 1 "GND" H 9500 1400 50  0000 C CNN
+F 2 "" H 9500 1550 50  0000 C CNN
+F 3 "" H 9500 1550 50  0000 C CNN
+	1    9500 1550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9650 1550 9500 1550
+Wire Wire Line
+	9650 1650 9250 1650
+Text GLabel 9250 1650 0    39   Input ~ 0
+SPI_CLK
+Wire Wire Line
+	9650 1750 9250 1750
+Text GLabel 9250 1750 0    39   Input ~ 0
+SPI_MOSI
+Wire Wire Line
+	9250 1850 9650 1850
+Text GLabel 9250 1850 0    39   Input ~ 0
+SPI_MISO
+Wire Wire Line
+	9650 1950 9250 1950
+Text GLabel 9250 1950 0    39   Input ~ 0
+/RESET
+Wire Wire Line
+	9650 2050 9250 2050
+Text GLabel 9250 2050 0    39   Input ~ 0
+BORDER
+$EndSCHEMATC

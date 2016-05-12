@@ -1,4 +1,4 @@
-update=Wed 11 May 2016 09:46:59 PM MDT
+update=Wed 11 May 2016 09:51:38 PM MDT
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,6 +23,8 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=
@@ -56,5 +58,5 @@ LibName26=opto
 LibName27=atmel
 LibName28=contrib
 LibName29=valves
-[general]
-version=1
+LibName30=MSP430G2553IPW20R
+LibName31=A120699CT
