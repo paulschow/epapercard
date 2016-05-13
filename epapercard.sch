@@ -37,10 +37,10 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
+Title "Epaper Business Card"
 Date ""
 Rev ""
-Comp ""
+Comp "paulschow.com"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -719,8 +719,6 @@ Text Label 9000 5600 2    60   ~ 0
 VCOM
 Wire Wire Line
 	9650 5050 9500 5050
-Text Notes 7350 7500 0    60   ~ 0
-Epaper Business Card
 $Comp
 L Q_NMOS_GSD Q5
 U 1 1 573477A8
