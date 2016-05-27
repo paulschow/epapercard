@@ -209,7 +209,9 @@ F 3 "" H 8150 2850 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	1550 700  1550 1300
+	1550 700  1550 800 
+Wire Wire Line
+	1550 800  1550 1300
 Wire Wire Line
 	1550 1300 1700 1300
 Wire Wire Line
@@ -441,7 +443,9 @@ VCOM
 Wire Wire Line
 	8100 4400 9150 4400
 Wire Wire Line
-	9150 4350 9150 4450
+	9150 4350 9150 4400
+Wire Wire Line
+	9150 4400 9150 4450
 Wire Wire Line
 	9150 4350 9650 4350
 Wire Wire Line
@@ -628,7 +632,9 @@ F 3 "" H 6000 5250 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	6150 5250 8900 5250
+	6150 5250 6250 5250
+Wire Wire Line
+	6250 5250 8900 5250
 Wire Wire Line
 	8900 4950 9650 4950
 Wire Wire Line
@@ -655,7 +661,9 @@ Wire Wire Line
 Wire Wire Line
 	6250 5450 5800 5450
 Wire Wire Line
-	5800 5450 5800 6000
+	5800 5450 5800 5600
+Wire Wire Line
+	5800 5600 5800 6000
 Wire Wire Line
 	5800 5600 6150 5600
 Connection ~ 6250 5250
@@ -685,7 +693,9 @@ F 3 "" H 6350 6200 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	6350 5900 6350 6050
+	6350 5900 6350 6000
+Wire Wire Line
+	6350 6000 6350 6050
 Wire Wire Line
 	6350 6000 6200 6000
 Connection ~ 6350 6000
@@ -709,7 +719,9 @@ BORDER
 Wire Wire Line
 	9500 5600 8250 5600
 Wire Wire Line
-	9500 5150 9500 5600
+	9500 5150 9500 5250
+Wire Wire Line
+	9500 5250 9500 5600
 Wire Wire Line
 	9500 5250 9650 5250
 Wire Wire Line
@@ -824,7 +836,7 @@ F 1 "BSS84W" H 2800 2950 50  0000 R CNN
 F 2 "TO_SOT_Packages_SMD:SOT-323" H 2500 3100 50  0001 C CNN
 F 3 "" H 2300 3000 50  0000 C CNN
 	1    2300 3000
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
 L Q_PMOS_GSD Q3
@@ -838,7 +850,9 @@ F 3 "" H 3550 3000 50  0000 C CNN
 	0    1    -1   0   
 $EndComp
 Wire Wire Line
-	1350 3600 1550 3600
+	1350 3600 1450 3600
+Wire Wire Line
+	1450 3600 1550 3600
 Text GLabel 1350 3600 0    60   Input ~ 0
 PANEL_ON
 Wire Wire Line
@@ -875,7 +889,9 @@ Wire Wire Line
 Wire Wire Line
 	2550 3300 2400 3300
 Wire Wire Line
-	2400 3300 2400 3200
+	2400 3300 2400 3250
+Wire Wire Line
+	2400 3250 2400 3200
 $Comp
 L R R1
 U 1 1 5734FD79
@@ -892,7 +908,9 @@ Wire Wire Line
 Wire Wire Line
 	1850 3250 1950 3250
 Wire Wire Line
-	2250 3250 3550 3250
+	2250 3250 2400 3250
+Wire Wire Line
+	2400 3250 3550 3250
 Connection ~ 2400 3250
 $Comp
 L GND #PWR018
@@ -908,7 +926,9 @@ $EndComp
 Wire Wire Line
 	2550 3750 2550 3650
 Wire Wire Line
-	2400 2700 2400 2800
+	2400 2700 2400 2750
+Wire Wire Line
+	2400 2750 2400 2800
 Wire Wire Line
 	3350 2900 2700 2900
 Wire Wire Line
@@ -941,7 +961,11 @@ F 3 "" H 4450 3100 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	3750 2900 4900 2900
+	3750 2900 4000 2900
+Wire Wire Line
+	4000 2900 4450 2900
+Wire Wire Line
+	4450 2900 4900 2900
 Wire Wire Line
 	4000 2900 4000 2950
 Wire Wire Line
@@ -1013,7 +1037,9 @@ DISCHARGE
 Text GLabel 4450 2100 2    60   Input ~ 0
 DISCHARGE
 Wire Wire Line
-	5750 4550 6100 4550
+	5750 4550 5900 4550
+Wire Wire Line
+	5900 4550 6100 4550
 Connection ~ 5900 4550
 Wire Wire Line
 	4450 2100 4200 2100
@@ -1118,7 +1144,9 @@ $EndComp
 Wire Wire Line
 	6100 1500 6100 1550
 Wire Wire Line
-	6100 1550 6650 1550
+	6100 1550 6350 1550
+Wire Wire Line
+	6350 1550 6650 1550
 Wire Wire Line
 	6350 1550 6350 1600
 Wire Wire Line
@@ -1138,7 +1166,9 @@ $EndComp
 Wire Wire Line
 	6100 1200 6100 1150
 Wire Wire Line
-	6100 1150 6650 1150
+	6100 1150 6350 1150
+Wire Wire Line
+	6350 1150 6650 1150
 Wire Wire Line
 	6350 1150 6350 1100
 Wire Wire Line
