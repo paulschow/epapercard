@@ -3,7 +3,7 @@
   (general
     (links 104)
     (no_connects 0)
-    (area 23.419999 29.769999 112.470001 80.720001)
+    (area 8.204287 22.759999 121.920001 96.012001)
     (thickness 1.6)
     (drawings 32)
     (tracks 457)
@@ -67,13 +67,13 @@
     (mod_edge_width 0.15)
     (mod_text_size 1 1)
     (mod_text_width 0.15)
-    (pad_size 1.524 1.524)
-    (pad_drill 0.762)
+    (pad_size 15.24 15.24)
+    (pad_drill 0)
     (pad_to_mask_clearance 0.2)
     (aux_axis_origin 0 0)
     (visible_elements FFFFFF3F)
     (pcbplotparams
-      (layerselection 0x010f0_80000001)
+      (layerselection 0x010f8_80000001)
       (usegerberextensions true)
       (excludeedgelayer true)
       (linewidth 0.100000)
@@ -280,7 +280,7 @@
     )
   )
 
-  (module footprint:CR2032sm (layer F.Cu) (tedit 574DE3E3) (tstamp 574DF514)
+  (module footprint:CR2032sm (layer F.Cu) (tedit 574E3E3A) (tstamp 574DF514)
     (at 76.2 41.91)
     (path /5735398E)
     (fp_text reference BT2 (at 6.858 -7.874) (layer F.SilkS)
@@ -294,7 +294,7 @@
       (net 1 +3V3))
     (pad 1 smd rect (at 13.208 0) (size 5.3 5.3) (layers F.Cu F.Paste F.Mask)
       (net 1 +3V3))
-    (pad 2 smd circle (at 0 0) (size 15.24 15.24) (layers F.Cu F.Paste F.Mask)
+    (pad 2 smd circle (at 0 0) (size 15.24 15.24) (layers F.Cu F.Mask)
       (net 2 GND))
   )
 
@@ -448,7 +448,7 @@
       (net 2 GND))
   )
 
-  (module footprint:CR2032sm (layer F.Cu) (tedit 574DE3E3) (tstamp 574DF3E3)
+  (module footprint:CR2032sm (layer F.Cu) (tedit 574E3E2E) (tstamp 574DF3E3)
     (at 41.656 41.91)
     (path /573537BF)
     (fp_text reference BT1 (at 6.858 -7.874) (layer F.SilkS)
@@ -462,7 +462,7 @@
       (net 1 +3V3))
     (pad 1 smd rect (at 13.208 0) (size 5.3 5.3) (layers F.Cu F.Paste F.Mask)
       (net 1 +3V3))
-    (pad 2 smd circle (at 0 0) (size 15.24 15.24) (layers F.Cu F.Paste F.Mask)
+    (pad 2 smd circle (at 0 0) (size 15.24 15.24) (layers F.Cu F.Mask)
       (net 2 GND))
   )
 
