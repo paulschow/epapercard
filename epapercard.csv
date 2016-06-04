@@ -1,5 +1,5 @@
 Reference, Value, Footprint, Datasheet
-U1,MSP430G2553IPW20R,Housings_SSOP:TSSOP-20_4.4x6.5mm_Pitch0.65mm,DOCUMENTATION
+U1,MSP430G2553IPW20R,footprint:TSSOP-20_4.4x6.5mm_Pitch0.65mm,DOCUMENTATION
 P2,A120699CT,footprint:A120699CT,DOCUMENTATION
 C15,2.2u,Capacitors_SMD:C_0805_HandSoldering,
 C18,2.2u,Capacitors_SMD:C_0805_HandSoldering,
@@ -17,7 +17,7 @@ C9,1u,Capacitors_SMD:C_0805_HandSoldering,
 C10,2.2u,Capacitors_SMD:C_0805_HandSoldering,
 C14,2.2u,Capacitors_SMD:C_0805_HandSoldering,
 D1,BAT54SW,TO_SOT_Packages_SMD:SOT-323,
-C2,100n,Capacitors_SMD:C_0805_HandSoldering,
+C2,0.1u,Capacitors_SMD:C_0805_HandSoldering,
 C11,2.2u,Capacitors_SMD:C_0805_HandSoldering,
 C4,2.2u,Capacitors_SMD:C_0805_HandSoldering,
 R3,100k,Resistors_SMD:R_0805_HandSoldering,
@@ -29,7 +29,7 @@ Q7,2N7002KW,TO_SOT_Packages_SMD:SOT-323,
 Q4,BSS84W,TO_SOT_Packages_SMD:SOT-323,
 Q1,2N7002KW,TO_SOT_Packages_SMD:SOT-323,
 Q2,BSS84W,TO_SOT_Packages_SMD:SOT-323,
-Q3,AP2305,TO_SOT_Packages_SMD:SOT-323,
+Q3,BSS84W,TO_SOT_Packages_SMD:SOT-323,
 C1,0.1u,Capacitors_SMD:C_0805_HandSoldering,
 R1,33k,Resistors_SMD:R_0805_HandSoldering,
 R2,33k,Resistors_SMD:R_0805_HandSoldering,
