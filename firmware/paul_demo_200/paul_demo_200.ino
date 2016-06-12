@@ -223,6 +223,33 @@ static int state = 0;
 
 // main loop
 void loop() {
+
+
+        // read the state of the switch into a local variable:
+        buttonState = digitalRead(buttonPin);
+        //if (buttonState == 0){
+        do{
+                delay(50);
+                buttonState = digitalRead(buttonPin);
+                changeimage();
+                //Serial.println(buttonState);
+//		digitalWrite(Pin_RED_LED, LED_ON);
+//		delay(50);
+//	        digitalWrite(Pin_RED_LED, LED_OFF);
+//		delay(50);
+        } while (buttonState == 1);
+        
+
+//	// flash LED for 5 seconds
+//	for (int x = 0; x < delay_counts; ++x) {
+//		digitalWrite(Pin_RED_LED, LED_ON);
+//		delay(50);
+//		digitalWrite(Pin_RED_LED, LED_OFF);
+//		delay(50);
+//	}
+}
+
+void changeimage(){
 	//int temperature = S5813A.read();
         int temperature = 20;
 	Serial.print("Temperature = ");
@@ -289,27 +316,7 @@ void loop() {
 		state = 2;  // back to picture next time
 		break;
 	}
-	EPD.end();   // power down the EPD panel
-
-        // read the state of the switch into a local variable:
-        buttonState = digitalRead(buttonPin);
-        //if (buttonState == 0){
-        do{
-                delay(50);
-                buttonState = digitalRead(buttonPin);
-                //Serial.println(buttonState);
-//		digitalWrite(Pin_RED_LED, LED_ON);
-//		delay(50);
-//	        digitalWrite(Pin_RED_LED, LED_OFF);
-//		delay(50);
-        } while (buttonState == 1);
-        
-
-//	// flash LED for 5 seconds
-//	for (int x = 0; x < delay_counts; ++x) {
-//		digitalWrite(Pin_RED_LED, LED_ON);
-//		delay(50);
-//		digitalWrite(Pin_RED_LED, LED_OFF);
-//		delay(50);
-//	}
+	EPD.end();   // power down the EPD panel  
+  
 }
+
