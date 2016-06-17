@@ -227,17 +227,21 @@ void loop() {
 
         // read the state of the switch into a local variable:
         buttonState = digitalRead(buttonPin);
-        //if (buttonState == 0){
-        do{
-                delay(50);
-                buttonState = digitalRead(buttonPin);
-                changeimage();
-                //Serial.println(buttonState);
-//		digitalWrite(Pin_RED_LED, LED_ON);
-//		delay(50);
-//	        digitalWrite(Pin_RED_LED, LED_OFF);
-//		delay(50);
-        } while (buttonState == 1);
+        if (buttonState == 0){
+          digitalWrite(Pin_RED_LED, LED_ON);
+          changeimage();
+          digitalWrite(Pin_RED_LED, LED_OFF);
+        }
+//        do{
+//                delay(50);
+//                buttonState = digitalRead(buttonPin);
+//                changeimage();
+//                //Serial.println(buttonState);
+////		digitalWrite(Pin_RED_LED, LED_ON);
+////		delay(50);
+////	        digitalWrite(Pin_RED_LED, LED_OFF);
+////		delay(50);
+//        } while (buttonState == 1);
         
 
 //	// flash LED for 5 seconds
@@ -319,4 +323,3 @@ void changeimage(){
 	EPD.end();   // power down the EPD panel  
   
 }
-
