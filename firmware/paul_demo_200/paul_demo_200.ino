@@ -50,20 +50,21 @@
 // required libraries
 #include <SPI.h>
 //#include <EPD_FLASH.h>
-#include <EPD_V110_G1.h>
+//#include <EPD_V110_G1.h>
+#include <EPD_V231_G2.h>
 #define SCREEN_SIZE 200
 #include <EPD_PANELS.h>
-#include <S5813A.h>
+//#include <S5813A.h>
 #include <EPD_PINOUT.h>
 
 // select two images from:  text_image text-hello cat aphrodite venus saturn
-#define IMAGE_1  text_image
+#define IMAGE_1  xsaturn
 #define IMAGE_2  saturn
 
 // Error message for MSP430
-#if (SCREEN_SIZE == 270) && defined(__MSP430G2553__)
-#error MSP430: not enough memory
-#endif
+//#if (SCREEN_SIZE == 270) && defined(__MSP430G2553__)
+//#error MSP430: not enough memory
+//#endif
 
 // no futher changed below this point
 
@@ -131,15 +132,16 @@ EPD_Class EPD(EPD_SIZE,
 // button setup
 const int buttonPin = PUSH2;     // the number of the pushbutton pin
 int buttonState;             // the current reading from the input pin
-int lastButtonState = LOW;   // the previous reading from the input pin
-long lastDebounceTime = 0;  // the last time the output pin was toggled
-long debounceDelay = 50;    // the debounce time; increase if the output flickers
+//int lastButtonState = LOW;   // the previous reading from the input pin
+//long lastDebounceTime = 0;  // the last time the output pin was toggled
+//long debounceDelay = 50;    // the debounce time; increase if the output flickers
 
 
 
 // I/O setup
 void setup() {
-        pinMode(buttonPin, INPUT_PULLUP);
+  
+  pinMode(buttonPin, INPUT_PULLUP);
         
 //        WDTCTL = WDTPW + WDTHOLD;                 // Stop watchdog timer
 //        P1DIR = 0x01;                             // P1.0 output, else input
@@ -151,7 +153,7 @@ void setup() {
         
 	pinMode(Pin_RED_LED, OUTPUT);
 	//pinMode(Pin_SW2, INPUT);
-	pinMode(Pin_TEMPERATURE, INPUT);
+	//pinMode(Pin_TEMPERATURE, INPUT);
 #if EPD_PWM_REQUIRED
 	pinMode(Pin_PWM, OUTPUT);
 #endif
@@ -174,30 +176,30 @@ void setup() {
 	digitalWrite(Pin_EPD_CS, LOW);
 	//digitalWrite(Pin_EPD_FLASH_CS, HIGH);
 
-	Serial.begin(9600);
-	delay(500);
+	//Serial.begin(9600);
+	//delay(500);
 
-#if defined(__AVR__)
-	// // indefinite wait for USB CDC serial port to connect.  Arduino Leonardo only
-	// while (!Serial) {
-	// }
-	// additional delay for USB CDC serial port to connect.  Arduino Leonardo only
-	if (!Serial) {       // allows terminal time to sync as long
-		delay(500);  // as the serial monitor is opened before
-	}                    // upload
-#endif
+//#if defined(__AVR__)
+//	// // indefinite wait for USB CDC serial port to connect.  Arduino Leonardo only
+//	// while (!Serial) {
+//	// }
+//	// additional delay for USB CDC serial port to connect.  Arduino Leonardo only
+//	if (!Serial) {       // allows terminal time to sync as long
+//		delay(500);  // as the serial monitor is opened before
+//	}                    // upload
+//#endif
 
-	Serial.println();
-	Serial.println();
-	Serial.println("Demo version: " DEMO_VERSION);
-	Serial.println("Display size: " MAKE_STRING(EPD_SIZE));
-	Serial.println("Film: V" MAKE_STRING(EPD_FILM_VERSION));
-	Serial.println("COG: G" MAKE_STRING(EPD_CHIP_VERSION));
-	Serial.println();
-
-	Serial.println("Image 1: " IMAGE_1_FILE);
-	Serial.println("Image 2: " IMAGE_2_FILE);
-	Serial.println();
+//	Serial.println();
+//	Serial.println();
+//	Serial.println("Demo version: " DEMO_VERSION);
+//	Serial.println("Display size: " MAKE_STRING(EPD_SIZE));
+//	Serial.println("Film: V" MAKE_STRING(EPD_FILM_VERSION));
+//	Serial.println("COG: G" MAKE_STRING(EPD_CHIP_VERSION));
+//	Serial.println();
+//
+//	Serial.println("Image 1: " IMAGE_1_FILE);
+//	Serial.println("Image 2: " IMAGE_2_FILE);
+//	Serial.println();
 
 //	EPD_FLASH.begin(Pin_EPD_FLASH_CS);
 //	if (EPD_FLASH.available()) {
@@ -218,7 +220,7 @@ void setup() {
 }
 
 
-static int state = 0;
+static int state = 1;
 
 
 // main loop
@@ -255,37 +257,37 @@ void loop() {
 
 void changeimage(){
 	//int temperature = S5813A.read();
-        int temperature = 20;
-	Serial.print("Temperature = ");
-	Serial.print(temperature, DEC);
-	Serial.println(" Celsius");
+        int temperature = 40;
+//	Serial.print("Temperature = ");
+//	Serial.print(temperature, DEC);
+//	Serial.println(" Celsius");
 
 	EPD.begin(); // power up the EPD panel
-	switch (EPD.error()) {
-	case EPD_OK:
-		Serial.println("EPD: ok");
-		break;
-	case EPD_UNSUPPORTED_COG:
-		Serial.println("EPD: unsuppported COG");
-		break;
-	case EPD_PANEL_BROKEN:
-		Serial.println("EPD: panel broken");
-		break;
-	case EPD_DC_FAILED:
-		Serial.println("EPD: DC failed");
-		break;
-	}
+//	switch (EPD.error()) {
+//	case EPD_OK:
+//		Serial.println("EPD: ok");
+//		break;
+//	case EPD_UNSUPPORTED_COG:
+//		Serial.println("EPD: unsuppported COG");
+//		break;
+//	case EPD_PANEL_BROKEN:
+//		Serial.println("EPD: panel broken");
+//		break;
+//	case EPD_DC_FAILED:
+//		Serial.println("EPD: DC failed");
+//		break;
+//	}
 
 	EPD.setFactor(temperature); // adjust for current temperature
 
-	int delay_counts = 50;
+	int delay_counts = 0;
 	switch(state) {
 	default:
-	case 0:         // clear the screen
-		EPD.clear();
-		state = 1;
-		delay_counts = 5;  // reduce delay so first image come up quickly
-		break;
+//	case 0:         // clear the screen
+//		EPD.clear();
+//		state = 1;
+//		delay_counts = 0;  // reduce delay so first image come up quickly
+//		break;
 
 	case 1:         // clear -> text
 #if EPD_IMAGE_ONE_ARG
