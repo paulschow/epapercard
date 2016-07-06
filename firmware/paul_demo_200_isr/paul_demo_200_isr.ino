@@ -1,4 +1,10 @@
-// -*- mode: c++ -*-
+// Demo code for epapercard
+// by Paul Schow
+// https://github.com/paulschow/epapercard
+// Switches between two images on button press
+// Based on demo_200.ino by Pervasive Displays, Inc.
+// Original copyright statement below
+
 // Copyright 2013-2015 Pervasive Displays, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,7 +36,6 @@
 #include <EPD_V231_G2.h>
 #define SCREEN_SIZE 200
 #include <EPD_PANELS.h>
-//#include <S5813A.h>
 #include <EPD_PINOUT.h>
 
 // select two images from:  text_image text-hello cat aphrodite venus saturn
