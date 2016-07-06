@@ -130,7 +130,9 @@ void setup() {
     digitalWrite(Pin_BORDER, LOW);
     digitalWrite(Pin_EPD_CS, LOW);
     //digitalWrite(Pin_EPD_FLASH_CS, HIGH);
-      
+    
+    pinMode(Pin_RED_LED, OUTPUT);
+  
     pinMode(P1_3, INPUT_PULLUP); // Attach pullup to 1.3 (button)
     attachInterrupt(P1_3, awake, FALLING); // Attach falling interrupt to 1.3
 }
@@ -141,7 +143,9 @@ static int state = 1;
 
 // main loop
 void loop() {
+  digitalWrite(Pin_RED_LED, LED_ON);
   changeimage(); // Change the picture
+  digitalWrite(Pin_RED_LED, LED_OFF);
   suspend(); // Enter low power mode 4 (0.1uA)
 }
 
