@@ -1,4 +1,4 @@
-update=Thu 12 May 2016 07:25:52 PM MDT
+update=Wed 06 Jul 2016 10:05:17 PM MDT
 version=1
 last_client=kicad
 [pcbnew]
@@ -25,6 +25,16 @@ version=1
 NetIExt=net
 [general]
 version=1
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=Pcbnew
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
 [eeschema]
 version=1
 LibDir=
@@ -61,13 +71,4 @@ LibName29=valves
 LibName30=MSP430G2553IPW20R
 LibName31=A120699CT
 LibName32=/home/paul/kicad-lib/tom_kicad
-[schematic_editor]
-version=1
-PageLayoutDescrFile=
-PlotDirectoryName=
-SubpartIdSeparator=0
-SubpartFirstId=65
-NetFmtName=Pcbnew
-SpiceForceRefPrefix=0
-SpiceUseNetNumbers=0
-LabSize=60
+LibName33=TLV61224
