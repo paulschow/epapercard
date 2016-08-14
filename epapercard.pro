@@ -1,4 +1,4 @@
-update=Fri 05 Aug 2016 12:42:36 PM MDT
+update=Fri 05 Aug 2016 03:18:42 PM MDT
 version=1
 last_client=kicad
 [pcbnew]
@@ -71,5 +71,4 @@ LibName29=valves
 LibName30=MSP430G2553IPW20R
 LibName31=A120699CT
 LibName32=/home/paul/kicad-lib/tom_kicad
-LibName33=TLV61224
-LibName34=TLV61225
+LibName33=TLV61225
