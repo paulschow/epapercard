@@ -1,7 +1,7 @@
 // Demo code for epapercard
 // by Paul Schow
 // https://github.com/paulschow/epapercard
-// Switches between two images on button press
+// Switches between four images on button press
 // Based on demo_200.ino by Pervasive Displays, Inc.
 // Original copyright statement below
 
@@ -32,15 +32,18 @@
 // required libraries
 #include <SPI.h>
 //#include <EPD_FLASH.h>
-//#include <EPD_V110_G1.h>
-#include <EPD_V231_G2.h>
+#include "EPD_V110_G1.h"
+//#include <EPD_V231_G2.h>
 #define SCREEN_SIZE 200
-#include <EPD_PANELS.h>
-#include <EPD_PINOUT.h>
+#include "EPD_PANELS.h"
+#include "EPD_PINOUT.h"
+
 
 // select two images from:  text_image text-hello cat aphrodite venus saturn
-#define IMAGE_1  text_hello
-#define IMAGE_2  saturn
+#define IMAGE_1  xsaturn
+#define IMAGE_2  prev
+#define IMAGE_3  font
+#define IMAGE_4  x2saturn
 
 // Error message for MSP430
 //#if (SCREEN_SIZE == 270) && defined(__MSP430G2553__)
@@ -68,9 +71,13 @@
 #define IMAGE_1_BITS MAKE_NAME(IMAGE_1,EPD_IMAGE_NAME_SUFFIX)
 #define IMAGE_2_FILE MAKE_JOIN(IMAGE_2,EPD_IMAGE_FILE_SUFFIX)
 #define IMAGE_2_BITS MAKE_NAME(IMAGE_2,EPD_IMAGE_NAME_SUFFIX)
+#define IMAGE_3_FILE MAKE_JOIN(IMAGE_3,EPD_IMAGE_FILE_SUFFIX)
+#define IMAGE_3_BITS MAKE_NAME(IMAGE_3,EPD_IMAGE_NAME_SUFFIX)
+#define IMAGE_4_FILE MAKE_JOIN(IMAGE_4,EPD_IMAGE_FILE_SUFFIX)
+#define IMAGE_4_BITS MAKE_NAME(IMAGE_4,EPD_IMAGE_NAME_SUFFIX)
 
 // Add Images library to compiler path
-#include <Images.h>  // this is just an empty file
+#include "Images.h"  // this is just an empty file
 
 // images
 PROGMEM const
@@ -84,6 +91,20 @@ PROGMEM const
 #define unsigned
 #define char uint8_t
 #include IMAGE_2_FILE
+#undef char
+#undef unsigned
+
+PROGMEM const
+#define unsigned
+#define char uint8_t
+#include IMAGE_3_FILE
+#undef char
+#undef unsigned
+
+PROGMEM const
+#define unsigned
+#define char uint8_t
+#include IMAGE_4_FILE
 #undef char
 #undef unsigned
 
@@ -130,9 +151,9 @@ void setup() {
     digitalWrite(Pin_BORDER, LOW);
     digitalWrite(Pin_EPD_CS, LOW);
     //digitalWrite(Pin_EPD_FLASH_CS, HIGH);
-    
+
     pinMode(Pin_RED_LED, OUTPUT);
-  
+
     pinMode(P1_3, INPUT_PULLUP); // Attach pullup to 1.3 (button)
     attachInterrupt(P1_3, awake, FALLING); // Attach falling interrupt to 1.3
 }
@@ -151,10 +172,10 @@ void loop() {
 
 
 void changeimage(){
-    int temperature = 40; // set temp to 40 for faster changing
+    //int temperature = 40; // set temp to 40 for faster changing
     EPD.begin(); // power up the EPD panel
-    EPD.setFactor(temperature); // adjust for current temperature
-    int delay_counts = 0;
+    EPD.setFactor(45); // adjust for current temperature
+    //int delay_counts = 0;
     switch(state) {
     default:
 
@@ -182,17 +203,41 @@ void changeimage(){
 
     case 3:        // picture -> text
 #if EPD_IMAGE_ONE_ARG
+        EPD.image(IMAGE_3_BITS);
+#elif EPD_IMAGE_TWO_ARG
+        EPD.image(IMAGE_2_BITS, IMAGE_3_BITS);
+#else
+#error "unsupported image function"
+#endif
+        ++state;
+        break;
+
+        case 4:        // picture -> text
+#if EPD_IMAGE_ONE_ARG
+        EPD.image(IMAGE_4_BITS);
+#elif EPD_IMAGE_TWO_ARG
+        EPD.image(IMAGE_3_BITS, IMAGE_4_BITS);
+#else
+#error "unsupported image function"
+#endif
+        ++state;
+        break;
+
+        case 5:        // picture -> text
+#if EPD_IMAGE_ONE_ARG
         EPD.image(IMAGE_1_BITS);
 #elif EPD_IMAGE_TWO_ARG
-        EPD.image(IMAGE_2_BITS, IMAGE_1_BITS);
+        EPD.image(IMAGE_4_BITS, IMAGE_1_BITS);
 #else
 #error "unsupported image function"
 #endif
         state = 2;  // back to picture next time
+        //++state;
         break;
+
     }
-    EPD.end();   // power down the EPD panel  
-  
+    EPD.end();   // power down the EPD panel
+
 }
 
 // interrupt service routine
@@ -200,4 +245,3 @@ void awake(void)
 {
   wakeup(); // wakeup from lpm4
 }
-
